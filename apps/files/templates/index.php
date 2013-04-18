@@ -1,7 +1,7 @@
 <!--[if IE 8]><style>input[type="checkbox"]{padding:0;}table td{position:static !important;}</style><![endif]-->
 <div id="controls">
 	<?php print_unescaped($_['breadcrumb']); ?>
-		<div class="actions creatable <?php if (!$_['isCreatable']):?>hidden<?php endif; ?> <?php if (isset($_['files']) and count($_['files'])==0):?>emptycontent<?php endif; ?>">
+		<div class="actions creatable <?php if (!$_['isCreatable']):?>hidden<?php endif; ?> <?php if (isset($_['files']) and count($_['files']) === 0):?>emptycontent<?php endif; ?>">
 			<div id="new" class="button">
 				<a><?php p($l->t('New'));?></a>
 				<ul>
@@ -71,7 +71,7 @@
 				<span id="modified"><?php p($l->t( 'Modified' )); ?></span>
 				<?php if ($_['permissions'] & OCP\PERMISSION_DELETE): ?>
 <!--					NOTE: Temporary fix to allow unsharing of files in root of Shared folder -->
-					<?php if ($_['dir'] == '/Shared'): ?>
+					<?php if ($_['dir'] === '/Shared'): ?>
 						<span class="selectedActions"><a href="" class="delete-selected">
 							<?php p($l->t('Unshare'))?>
 							<img class="svg" alt="<?php p($l->t('Unshare'))?>"

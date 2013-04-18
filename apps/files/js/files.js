@@ -1,6 +1,6 @@
 Files={
 	updateMaxUploadFilesize:function(response) {
-		if(response == undefined) {
+		if(response === undefined) {
 			return;
 		}
 		if(response.data !== undefined && response.data.uploadMaxFilesize !== undefined) {
@@ -9,7 +9,7 @@ Files={
 			$('#usedSpacePercent').val(response.data.usedSpacePercent);
 			Files.displayStorageWarnings();
 		}
-		if(response[0] == undefined) {
+		if(response[0] === undefined) {
 			return;
 		}
 		if(response[0].uploadMaxFilesize !== undefined) {
@@ -25,7 +25,7 @@ Files={
 			OC.Notification.show(t('files', '\'.\' is an invalid file name.'));
 			return false;
 		}
-		if (name.length == 0) {
+		if (name.length === 0) {
 			OC.Notification.show(t('files', 'File name cannot be empty.'));
 			return false;
 		}
@@ -33,7 +33,7 @@ Files={
 		// check for invalid characters
 		var invalid_characters = ['\\', '/', '<', '>', ':', '"', '|', '?', '*'];
 		for (var i = 0; i < invalid_characters.length; i++) {
-			if (name.indexOf(invalid_characters[i]) != -1) {
+			if (name.indexOf(invalid_characters[i]) !== -1) {
 				OC.Notification.show(t('files', "Invalid name, '\\', '/', '<', '>', ':', '\"', '|', '?' and '*' are not allowed."));
 				return false;
 			}
@@ -215,7 +215,7 @@ $(document).ready(function() {
 				var rows = $(this).parent().parent().parent().children('tr');
 				for (var i = start; i < end; i++) {
 					$(rows).each(function(index) {
-						if (index == i) {
+						if (index === i) {
 							var checkbox = $(this).children().children('input:checkbox');
 							$(checkbox).attr('checked', 'checked');
 							$(checkbox).parent().parent().addClass('selected');
@@ -233,7 +233,7 @@ $(document).ready(function() {
 				$(checkbox).attr('checked', 'checked');
 				$(checkbox).parent().parent().toggleClass('selected');
 				var selectedCount=$('td.filename input:checkbox:checked').length;
-				if (selectedCount == $('td.filename input:checkbox').length) {
+				if (selectedCount === $('td.filename input:checkbox').length) {
 					$('#select_all').attr('checked', 'checked');
 				}
 			}
@@ -280,7 +280,7 @@ $(document).ready(function() {
 			var rows = $(this).parent().parent().parent().children('tr');
 			for (var i = start; i < end; i++) {
 				$(rows).each(function(index) {
-					if (index == i) {
+					if (index === i) {
 						var checkbox = $(this).children().children('input:checkbox');
 						$(checkbox).attr('checked', 'checked');
 						$(checkbox).parent().parent().addClass('selected');
@@ -418,7 +418,7 @@ scanFiles.scanning=false;
 function boolOperationFinished(data, callback) {
 	result = jQuery.parseJSON(data.responseText);
 	Files.updateMaxUploadFilesize(result);
-	if(result.status == 'success'){
+	if(result.status === 'success'){
 		callback.call();
 	} else {
 		alert(result.data.message);
@@ -435,7 +435,7 @@ var createDragShadow = function(event){
 
 	var selectedFiles = getSelectedFiles();
 
-	if (!isDragSelected && selectedFiles.length == 1) {
+	if (!isDragSelected && selectedFiles.length === 1) {
 		//revert the selection
 		$(event.target).parents('tr').find('td input:first').prop('checked',false);
 	}
@@ -527,14 +527,14 @@ var crumbDropOptions={
 	drop: function( event, ui ) {
 		var target=$(this).data('dir');
 		var dir=$('#dir').val();
-		while(dir.substr(0,1)=='/'){//remove extra leading /'s
+		while(dir.substr(0,1) === '/'){//remove extra leading /'s
 				dir=dir.substr(1);
 		}
 		dir='/'+dir;
-		if(dir.substr(-1,1)!='/'){
+		if(dir.substr(-1,1) !== '/'){
 			dir=dir+'/';
 		}
-		if(target==dir || target+'/'==dir){
+		if(target==dir || target+'/' === dir){
 			return;
 		}
 		var files = ui.helper.find('tr');
@@ -563,9 +563,9 @@ var crumbDropOptions={
 
 function procesSelection(){
 	var selected=getSelectedFiles();
-	var selectedFiles=selected.filter(function(el){return el.type=='file'});
-	var selectedFolders=selected.filter(function(el){return el.type=='dir'});
-	if(selectedFiles.length==0 && selectedFolders.length==0) {
+	var selectedFiles=selected.filter(function(el){return el.type === 'file'});
+	var selectedFolders=selected.filter(function(el){return el.type === 'dir'});
+	if(selectedFiles.length === 0 && selectedFolders.length === 0) {
 		$('#headerName>span.name').text(t('files','Name'));
 		$('#headerSize').text(t('files','Size'));
 		$('#modified').text(t('files','Modified'));
