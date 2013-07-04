@@ -218,6 +218,7 @@ class OC {
 			header('Retry-After: 120');
 
 			// render error page
+			OC_Util::addscript('maintenance-check');
 			OC_Template::printErrorPage('ownCloud is in maintenance mode');
 		}
 	}
