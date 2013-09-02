@@ -5,13 +5,15 @@
 # Translators:
 # Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2013
 # plazmism <gomidori@live.jp>, 2013
+# Koichi MATSUMOTO <mzch@me.com>, 2013
+# tt yn <tetuyano+transi@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
-"POT-Creation-Date: 2013-07-31 01:55-0400\n"
-"PO-Revision-Date: 2013-07-30 12:13+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"POT-Creation-Date: 2013-09-01 13:27-0400\n"
+"PO-Revision-Date: 2013-08-31 09:50+0000\n"
+"Last-Translator: plazmism <gomidori@live.jp>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,6 +25,35 @@ msgstr ""
 #, php-format
 msgid "%s shared »%s« with you"
 msgstr "%sが あなたと »%s«を共有しました"
+
+#: ajax/share.php:227
+msgid "group"
+msgstr "グループ"
+
+#: ajax/update.php:11
+msgid "Turned on maintenance mode"
+msgstr "メンテナンスモードがオンになりました"
+
+#: ajax/update.php:14
+msgid "Turned off maintenance mode"
+msgstr "メンテナンスモードがオフになりました"
+
+#: ajax/update.php:17
+msgid "Updated database"
+msgstr "データベース更新完了"
+
+#: ajax/update.php:20
+msgid "Updating filecache, this may take really long..."
+msgstr "ファイルキャッシュを更新しています、しばらく掛かる恐れがあります..."
+
+#: ajax/update.php:23
+msgid "Updated filecache"
+msgstr "ファイルキャッシュ更新完了"
+
+#: ajax/update.php:26
+#, php-format
+msgid "... %d%% done ..."
+msgstr "... %d%% 完了 ..."
 
 #: ajax/vcategories/add.php:26 ajax/vcategories/edit.php:25
 msgid "Category type not provided."
@@ -139,83 +170,75 @@ msgstr "11月"
 msgid "December"
 msgstr "12月"
 
-#: js/js.js:293
+#: js/js.js:355
 msgid "Settings"
 msgstr "設定"
 
-#: js/js.js:715
+#: js/js.js:812
 msgid "seconds ago"
 msgstr "数秒前"
 
-#: js/js.js:716
-msgid "1 minute ago"
-msgstr "1 分前"
+#: js/js.js:813
+msgid "%n minute ago"
+msgid_plural "%n minutes ago"
+msgstr[0] "%n 分前"
 
-#: js/js.js:717
-msgid "{minutes} minutes ago"
-msgstr "{minutes} 分前"
+#: js/js.js:814
+msgid "%n hour ago"
+msgid_plural "%n hours ago"
+msgstr[0] "%n 時間後"
 
-#: js/js.js:718
-msgid "1 hour ago"
-msgstr "1 時間前"
-
-#: js/js.js:719
-msgid "{hours} hours ago"
-msgstr "{hours} 時間前"
-
-#: js/js.js:720
+#: js/js.js:815
 msgid "today"
 msgstr "今日"
 
-#: js/js.js:721
+#: js/js.js:816
 msgid "yesterday"
 msgstr "昨日"
 
-#: js/js.js:722
-msgid "{days} days ago"
-msgstr "{days} 日前"
+#: js/js.js:817
+msgid "%n day ago"
+msgid_plural "%n days ago"
+msgstr[0] "%n 日後"
 
-#: js/js.js:723
+#: js/js.js:818
 msgid "last month"
 msgstr "一月前"
 
-#: js/js.js:724
-msgid "{months} months ago"
-msgstr "{months} 月前"
+#: js/js.js:819
+msgid "%n month ago"
+msgid_plural "%n months ago"
+msgstr[0] "%n カ月後"
 
-#: js/js.js:725
+#: js/js.js:820
 msgid "months ago"
 msgstr "月前"
 
-#: js/js.js:726
+#: js/js.js:821
 msgid "last year"
 msgstr "一年前"
 
-#: js/js.js:727
+#: js/js.js:822
 msgid "years ago"
 msgstr "年前"
 
-#: js/oc-dialogs.js:117
+#: js/oc-dialogs.js:123
 msgid "Choose"
 msgstr "選択"
 
-#: js/oc-dialogs.js:122
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: js/oc-dialogs.js:141 js/oc-dialogs.js:200
+#: js/oc-dialogs.js:143 js/oc-dialogs.js:210
 msgid "Error loading file picker template"
 msgstr "ファイルピッカーのテンプレートの読み込みエラー"
 
-#: js/oc-dialogs.js:164
+#: js/oc-dialogs.js:168
 msgid "Yes"
 msgstr "はい"
 
-#: js/oc-dialogs.js:172
+#: js/oc-dialogs.js:178
 msgid "No"
 msgstr "いいえ"
 
-#: js/oc-dialogs.js:185
+#: js/oc-dialogs.js:195
 msgid "Ok"
 msgstr "OK"
 
@@ -379,9 +402,10 @@ msgstr "更新に成功しました。この問題を <a href=\"https://github.c
 msgid "The update was successful. Redirecting you to ownCloud now."
 msgstr "更新に成功しました。今すぐownCloudにリダイレクトします。"
 
-#: lostpassword/controller.php:60
-msgid "ownCloud password reset"
-msgstr "ownCloudのパスワードをリセットします"
+#: lostpassword/controller.php:61
+#, php-format
+msgid "%s password reset"
+msgstr "%s パスワードリセット"
 
 #: lostpassword/templates/email.php:2
 msgid "Use the following link to reset your password: {link}"
@@ -447,7 +471,7 @@ msgstr "個人"
 msgid "Users"
 msgstr "ユーザ"
 
-#: strings.php:7
+#: strings.php:7 templates/layout.user.php:105
 msgid "Apps"
 msgstr "アプリ"
 
@@ -498,7 +522,7 @@ msgstr "あなたのPHPのバージョンには、Null Byte攻撃(CVE-2006-7243)
 #: templates/installation.php:26
 #, php-format
 msgid "Please update your PHP installation to use %s securely."
-msgstr ""
+msgstr "%s を安全に利用する為に インストールされているPHPをアップデートしてください。"
 
 #: templates/installation.php:32
 msgid ""
@@ -523,7 +547,7 @@ msgstr ".htaccess ファイルが動作していないため、おそらくあ�
 msgid ""
 "For information how to properly configure your server, please see the <a "
 "href=\"%s\" target=\"_blank\">documentation</a>."
-msgstr ""
+msgstr "サーバーを適正に設定する情報は、こちらの<a href=\"%s\" target=\"_blank\">ドキュメント</a>を参照してください。"
 
 #: templates/installation.php:47
 msgid "Create an <strong>admin account</strong>"
@@ -594,19 +618,19 @@ msgstr "最近パスワードを変更していない場合、あなたのアカ
 msgid "Please change your password to secure your account again."
 msgstr "アカウント保護の為、パスワードを再度の変更をお願いいたします。"
 
-#: templates/login.php:34
+#: templates/login.php:32
 msgid "Lost your password?"
 msgstr "パスワードを忘れましたか？"
 
-#: templates/login.php:39
+#: templates/login.php:37
 msgid "remember"
 msgstr "パスワードを記憶する"
 
-#: templates/login.php:41
+#: templates/login.php:39
 msgid "Log in"
 msgstr "ログイン"
 
-#: templates/login.php:47
+#: templates/login.php:45
 msgid "Alternative Logins"
 msgstr "代替ログイン"
 
@@ -616,14 +640,6 @@ msgid ""
 "Hey there,<br><br>just letting you know that %s shared »%s« with you.<br><a "
 "href=\"%s\">View it!</a><br><br>Cheers!"
 msgstr "こんにちは、<br><br>%sがあなたと »%s« を共有したことをお知らせします。<br><a href=\"%s\">それを表示</a><br><br>それでは。"
-
-#: templates/part.pagenavi.php:3
-msgid "prev"
-msgstr "前"
-
-#: templates/part.pagenavi.php:20
-msgid "next"
-msgstr "次"
 
 #: templates/update.php:3
 #, php-format
