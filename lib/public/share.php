@@ -348,7 +348,7 @@ class Share {
 			$now = new \DateTime();
 			$expirationDate = new \DateTime($row['expiration'], new \DateTimeZone('UTC'));
 			if ($now > $expirationDate) {
-				self::delete($row['id']);
+				self::unshareItem($row);
 				return false;
 			}
 		}
@@ -1186,7 +1186,7 @@ class Share {
 			if (isset($row['expiration'])) {
 				$time = new \DateTime();
 				if ($row['expiration'] < date('Y-m-d H:i', $time->format('U') - $time->getOffset())) {
-					self::delete($row['id']);
+					self::unshareItem($row);
 					continue;
 				}
 			}
