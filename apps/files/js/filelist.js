@@ -520,6 +520,7 @@ $(document).ready(function(){
 			}
 		}
 	});
+
 	file_upload_start.on('fileuploadstop', function(e, data) {
 		OC.Upload.log('filelist handle fileuploadstop', e, data);
 
