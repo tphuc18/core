@@ -180,8 +180,7 @@ input[type="submit"].enabled {
 #controls button,
 #controls input[type='submit'],
 #controls input[type='text'],
-#controls input[type='password'],
-#controls select {
+#controls input[type='password'] {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
