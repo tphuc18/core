@@ -65,7 +65,7 @@ div.quota {
 div.quota-select-wrapper { position: relative; }
 div.recoveryPassword { left:50em; display:block; position:absolute; top:-1px; }
 input#recoveryPassword {width:15em;}
-select.quota { position:absolute; left:0; top:8px; width:10em; }
+select.quota { position:absolute; left:0; top:0px; width:10em; }
 select.quota-user { position:relative; left:0; top:0; width:10em; }
 div.quota>span {
 	position: absolute;
